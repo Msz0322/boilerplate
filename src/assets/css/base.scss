@@ -1,0 +1,209 @@
+$image: '~img';
+$bezierNorm: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+@mixin scrollY {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  // 隐藏滚动条
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+@mixin scrollX {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  // 隐藏滚动条
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+@mixin lineEll($line: 1) {
+  @if $line==1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin abs($top:null, $right:null, $bottom:null, $left:null, $pos:absolute) {
+  position: $pos;
+
+  @if $top {
+    top: $top;
+  }
+
+  @if $right {
+    right: $right;
+  }
+
+  @if $bottom {
+    bottom: $bottom;
+  }
+
+  @if $left {
+    left: $left;
+  }
+
+}
+
+@mixin flexCC() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transVc() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+@mixin wh($width:null, $height:null) {
+  width: $width;
+
+  @if $height {
+    height: $height;
+
+  }
+
+  @else {
+    height: $width;
+  }
+}
+
+// 图片样式
+@mixin img($width:null, $height:null, $display: block) {
+  @if $display {
+    display: $display;
+  }
+  @if $width {
+    width: $width
+  }
+  @if $height {
+    height: $height;
+  }
+}
+
+@mixin bgwh($width:null, $height:null) {
+
+  @if $height {
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+  }
+
+  @else {
+    width: $width;
+    height: $width;
+    background-size: $width $width;
+  }
+}
+
+// 清除浮动
+@mixin clearFoat() {
+  &:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+// 字体
+@mixin fam($weight: bold){
+  @if $weight==bold {
+    font-family: PingFangSC-Semibold, "Microsoft YaHei", "微软雅黑";
+  } @else if $weight==medium {
+    font-family: PingFang-SC-Medium;
+  } @else {
+    font-family: PingFang-SC-Regular;
+  }
+}
+
+// ui调试
+@mixin testUi($color: red) {
+  * {
+    outline: 1px solid $color;
+  }
+}
+
+// font
+@mixin font($fontSize:null, $fontWeight:null, $lineHeight: null, $color: null,$fontFamily:null ) {
+  @if $fontSize {
+    font-size: $fontSize;
+  }
+  @if $fontWeight {
+    font-weight: $fontWeight
+  }
+  @if $fontFamily {
+    font-family: $fontFamily;
+  }
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $color {
+    color: $color;
+  }
+}
+
+// border
+@mixin border($border: null, $borderRadius:null) {
+  @if $border{
+    border: $border;
+  }
+  @if $borderRadius {
+    border-radius: $borderRadius
+  }
+}
+
+// iPhone-X 底部 fixed
+@mixin ipxFixedBottom ($height: null, $zIndex: 996) {
+  @if $height {
+    box-sizing: content-box;
+    height: $height;
+    z-index: $zIndex;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+//定位上下左右居中
+%center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+%ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+%cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

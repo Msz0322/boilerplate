@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "_V/*": ["views/*"],
+      "_ITF/*": ["interface/*"],
+      "_API/*": ["api/*"]
+    }
+  }
+}
