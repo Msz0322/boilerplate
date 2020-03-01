@@ -15,6 +15,8 @@ import 'egg-static';
 import 'egg-jsonp';
 import 'egg-view';
 import 'egg-router-plus';
+import 'egg-mongoose';
+import 'egg-graphql';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -31,5 +33,7 @@ declare module 'egg' {
     jsonp?: EggPluginItem;
     view?: EggPluginItem;
     routerPlus?: EggPluginItem;
+    mongoose?: EggPluginItem;
+    graphql?: EggPluginItem;
   }
 }

@@ -10,6 +10,14 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-router-plus',
   },
+  mongoose: {
+    enable: true,
+    package: 'egg-mongoose',
+  },
+  graphql: {
+    enable: true,
+    package: 'egg-graphql'
+  }
 };
 
 export default plugin;
