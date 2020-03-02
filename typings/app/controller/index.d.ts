@@ -3,15 +3,13 @@
 
 import 'egg';
 import ExportApiTest from '../../../app/controller/api/test';
-import ExportApiUserRegister from '../../../app/controller/api/user/Register';
+import ExportApiUser from '../../../app/controller/api/User';
 
 declare module 'egg' {
   interface IController {
     api: {
       test: ExportApiTest;
-      user: {
-        register: ExportApiUserRegister;
-      }
+      user: ExportApiUser;
     }
   }
 }

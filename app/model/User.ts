@@ -1,4 +1,4 @@
-import { Typegoose, prop } from 'typegoose'
+import { Typegoose, prop } from '@hasezoey/typegoose'
 
 export class User extends Typegoose {
   @prop({ required: true })
@@ -8,4 +8,9 @@ export class User extends Typegoose {
   password: string
 }
 
-export const UserModel = new User().getModelForClass(User)
+export const UserModel = new User().getModelForClass(User, {
+  schemaOptions: {
+    versionKey: false,
+    timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
+  }
+})

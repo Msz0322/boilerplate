@@ -5,5 +5,6 @@ export default (app: Application) => {
 
   const apiRouter = app.router.namespace('/api/user')
 
-  apiRouter.get('/register', controller.api.user.register.index)
+  apiRouter.get('/register', controller.api.user.register)
+  apiRouter.get('/list', controller.api.user.list)
 }
