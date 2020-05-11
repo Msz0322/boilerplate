@@ -1,4 +1,4 @@
-// This file is created by egg-ts-helper@1.25.6
+// This file is created by egg-ts-helper@1.25.8
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
@@ -16,7 +16,6 @@ import 'egg-jsonp';
 import 'egg-view';
 import 'egg-router-plus';
 import 'egg-mongoose';
-import 'egg-graphql';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -34,6 +33,5 @@ declare module 'egg' {
     view?: EggPluginItem;
     routerPlus?: EggPluginItem;
     mongoose?: EggPluginItem;
-    graphql?: EggPluginItem;
   }
 }
