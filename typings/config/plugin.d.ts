@@ -16,6 +16,8 @@ import 'egg-jsonp';
 import 'egg-view';
 import 'egg-router-plus';
 import 'egg-mongoose';
+import '@switchdog/egg-graphql';
+import 'egg-cors';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -33,5 +35,7 @@ declare module 'egg' {
     view?: EggPluginItem;
     routerPlus?: EggPluginItem;
     mongoose?: EggPluginItem;
+    graphql?: EggPluginItem;
+    cors?: EggPluginItem;
   }
 }

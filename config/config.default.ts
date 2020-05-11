@@ -8,7 +8,7 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1582809694067_9328'
 
   // add your egg config in here
-  // config.middleware = ['graphql']
+  config.middleware = ['graphql']
 
   config.cluster = {
     listen: {
@@ -27,15 +27,26 @@ export default (appInfo: EggAppInfo) => {
     }
   }
 
-  // config.graphql = {
-  //   router: '/graphql',
-  //   // 是否加载到 app 上，默认开启
-  //   app: true,
-  //   // 是否加载到 agent 上，默认关闭
-  //   agent: false,
-  //   // 是否加载开发者工具 graphiql, 默认开启。路由同 router 字段。使用浏览器打开该可见。
-  //   graphiql: true,
-  // }
+  config.graphql = {
+    router: '/graphql',
+    // 是否加载到 app 上，默认开启
+    app: true,
+    // 是否加载到 agent 上，默认关闭
+    agent: false,
+    // 是否加载开发者工具 graphiql, 默认开启。路由同 router 字段。使用浏览器打开该可见。
+    graphiql: true,
+  }
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  }
+
+  config.security = {
+    csrf: {
+      ignore: () => true,
+    },
+  }
 
   // add your special config in here
   const bizConfig = {

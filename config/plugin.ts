@@ -14,10 +14,14 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-mongoose',
   },
-  // graphql: {
-  //   enable: true,
-  //   package: 'egg-graphql'
-  // }
-};
+  graphql: {
+    enable: true,
+    package: '@switchdog/egg-graphql',
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
+}
 
 export default plugin;
